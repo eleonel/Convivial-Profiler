@@ -153,7 +153,7 @@ class SettingsForm extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->config('convivial_profiler.settings');
 
-    $form['convivial_profiler']['#markup'] = t('Convivial Profiler is licensed software. It is free to use for community and not for profit uses. However, if you are using it in a commercial setting you need to purchase a license before going live. Details can be found on the Convivial Profiler <a href=":convivial_profiler">pricing page.</a>',  [':convivial_profiler' => 'https://www.morpht.com/convivial-profiler-pricing']);
+    $form['convivial_profiler']['#markup'] = t('Convivial Profiler is licensed software. It is free to use for community and not for profit uses. However, if you are using it in a commercial setting you need to purchase a license before going live. Details can be found on the Convivial Profiler <a href=":convivial_profiler">pricing page.</a>', [':convivial_profiler' => 'https://www.morpht.com/convivial-profiler-pricing']);
     $form['site_id'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Site ID'),
@@ -596,7 +596,7 @@ class SettingsForm extends ConfigFormBase {
    * Validate handler for deleting an item.
    */
   public function deleteItemValidate(array $form, FormStateInterface $form_state) {
-    // Validate handler for deleting an item
+    // Validate handler for deleting an item.
   }
 
   /**
