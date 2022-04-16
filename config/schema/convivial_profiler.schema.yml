@@ -1,0 +1,169 @@
+convivial_profiler.settings:
+  type: config_object
+  label: 'Convivial Profiler settings'
+  mapping:
+    site_id:
+      type: string
+      label: 'Site ID'
+    license_key:
+      type: string
+      label: 'License key'
+    client_cleanup:
+      type: boolean
+      label: 'Client cleanup'
+    event_tracking:
+      type: boolean
+      label: 'Event tracking'
+    profilers:
+      type: sequence
+      label: 'Profilers'
+      sequence:
+        type: mapping
+        mapping:
+          id:
+            type: string
+          description:
+            type: string
+          deferred:
+            type: boolean
+          sources:
+            type: sequence
+            label: 'Sources'
+            sequence:
+              type: mapping
+              label: 'Source'
+              mapping:
+                type:
+                  type: string
+                key:
+                  type: string
+          processors:
+            type: sequence
+            label: 'Processors'
+            sequence:
+              type: mapping
+              label: 'Processor'
+              mapping:
+                type:
+                  type: string
+                key:
+                  type: string
+                ttl:
+                  type: integer
+                normalize:
+                  type: boolean
+                search_path:
+                  type: string
+                query_param:
+                  type: string
+                exclude_param:
+                  type: string
+                size:
+                  type: integer
+                track:
+                  type: boolean
+                log:
+                  type: boolean
+                default_value:
+                  type: string
+                fallback_value:
+                  type: string
+                mappings:
+                  type: sequence
+                  sequence:
+                    type: string
+                    label: 'Mapping'
+          destinations:
+            type: sequence
+            label: 'Destinations'
+            sequence:
+              type: mapping
+              label: 'Destination'
+              mapping:
+                default_value:
+                  type: string
+                description:
+                  type: string
+                key:
+                  type: string
+                type:
+                  type: string
+                global_storage:
+                  type: boolean
+                remove_empty:
+                  type: boolean
+                paths:
+                  type: sequence
+                  label: 'Paths'
+                  sequence:
+                    type: string
+                    label: 'Path'
+                storage:
+                  type: mapping
+                  label: 'Storage'
+                  mapping:
+                    localstorage:
+                      type: string
+                    cookie:
+                      type: string
+                static_values:
+                  type: sequence
+                  label: 'Static Values'
+                  sequence:
+                    type: string
+                    label: 'Static Value'
+                threshold_number:
+                  type: integer
+                category:
+                  type: string
+                action:
+                  type: string
+                normalize:
+                  type: boolean
+                storage_key:
+                  type: string
+                storage_value:
+                  type: string
+                form_selector:
+                  type: string
+                fields_selector:
+                  type: sequence
+                  label: 'Fields Selector'
+                  sequence:
+                    type: string
+                    label: 'Field selector'
+                normal_start:
+                  type: string
+                normal_end:
+                  type: string
+                normal_offset:
+                  type: string
+                daylight_saving_start:
+                  type: string
+                daylight_saving_end:
+                  type: string
+                daylight_saving_offset:
+                  type: string
+                office_start:
+                  type: string
+                office_close:
+                  type: string
+                ranges:
+                  type: sequence
+                  label: 'Ranges'
+                  sequence:
+                    type: mapping
+                    label: 'Range'
+                    mapping:
+                      key:
+                        type: string
+                      min:
+                        type: integer
+                      max:
+                        type: integer
+    visibility:
+      type: sequence
+      label: 'Visibility conditions'
+      sequence:
+        type: condition.plugin.[id]
+        label: 'Visibility condition'

@@ -1,0 +1,12 @@
+library:
+  js:
+    //cdn.jsdelivr.net/gh/morpht/convivial-profiler@v0.1.20/dist/bundle.js: { type: external, minified: true }
+
+init:
+  js:
+    js/convivial_profiler.init.js: {}
+  dependencies:
+    - core/jquery
+    - core/once
+    - core/drupalSettings
+    - convivial_profiler/library

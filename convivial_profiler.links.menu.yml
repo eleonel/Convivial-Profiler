@@ -1,0 +1,5 @@
+convivial_profiler.settings:
+  title: 'Convivial Profiler'
+  route_name: convivial_profiler.settings
+  description: 'Configure personalization and visitor data collection.'
+  parent: convivial_core.admin_convivial

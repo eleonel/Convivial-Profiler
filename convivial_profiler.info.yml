@@ -1,0 +1,8 @@
+name: Convivial Profiler
+type: module
+description: Provides ability for personalization and visitor data collection.
+core_version_requirement: ^9
+package: Convivial
+configure: convivial_profiler.settings
+dependencies:
+  - drupal:convivial_core

@@ -1,0 +1,13 @@
+services:
+  plugin.manager.profiler_source:
+    class: Drupal\convivial_profiler\Plugin\ProfilerSourcePluginManager
+    parent: default_plugin_manager
+    arguments: [ '@theme_handler' ]
+  plugin.manager.profiler_processor:
+    class: Drupal\convivial_profiler\Plugin\ProfilerProcessorPluginManager
+    parent: default_plugin_manager
+    arguments: [ '@theme_handler' ]
+  plugin.manager.profiler_destination:
+    class: Drupal\convivial_profiler\Plugin\ProfilerDestinationPluginManager
+    parent: default_plugin_manager
+    arguments: [ '@theme_handler' ]

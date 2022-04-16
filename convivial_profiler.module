@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Convivial Profiler module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function convivial_profiler_page_attachments(array &$attachments) {
+  $config = \Drupal::config('convivial_profiler.settings');
+  if (empty($site = $config->get('site_id')) || empty($license_key = $config->get('license_key'))) {
+    return;
+  }
+  $attachments['#attached']['library'][] = 'convivial_profiler/init';
+  $attachments['#attached']['drupalSettings']['convivialProfiler'] = [
+    'site' => $site,
+    'license_key' => $license_key,
+    'client_cleanup' => $config->get('client_cleanup'),
+    'event_tracking' => $config->get('event_tracking'),
+    'config' => [
+      'profilers' => $config->get('profilers') ?? (object) [],
+    ],
+  ];
+}

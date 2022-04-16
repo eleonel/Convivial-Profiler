@@ -1,0 +1,156 @@
+accumulation:
+  label: Accumulation
+  description: Increase accumulators storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+
+store:
+  label: Store
+  description: Set store storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    ttl:
+      '#type': number
+      '#title': The time to live in seconds
+
+language_simple:
+  label: Language Simple
+  description: Set language simple in store storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    ttl:
+      '#type': number
+      '#title': The time to live in seconds
+
+language_full:
+  label: Language full
+  description: Set language full in store storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    ttl:
+      '#type': number
+      '#title': The time to live in seconds
+
+dimension:
+  label: Dimension
+  description: Increase dimensions storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    normalize:
+      '#type': checkbox
+      '#title': Normalize the values
+
+extreme_geoip:
+  label: IP geolocation lookup
+  description: Set fetchers storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    ttl:
+      '#type': number
+      '#title': The time to live in seconds
+      '#required': true
+
+device_type:
+  label: Device type
+  description: Set device type.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+
+pageview:
+  label: Page view
+  description: Track page views.
+  form:
+    key:
+      '#type': textfield
+      '#title': Key
+      '#description': The key to store this pageview log and track under
+      '#required': true
+    track:
+      '#type': checkbox
+      '#title': Track
+      '#description': Use this to enable the counters of the page view
+    log:
+      '#type': checkbox
+      '#title': Log
+      '#description': Use this to enable the logging of the page view
+
+searchquery:
+  label: Search Query
+  description: Track and log search query.
+  form:
+    key:
+      '#type': textfield
+      '#title': Key
+      '#description': The key to store this search query log and track under
+      '#required': true
+    search_path:
+      '#type': textfield
+      '#title': Path
+      '#description': The Url of the search page
+      '#required': true
+    query_param:
+      '#type': textfield
+      '#title': Query param
+      '#description': The URL query parameter for the search term, eg "query"
+      '#required': true
+    exclude_param:
+      '#type': textfield
+      '#title': Exclude param
+      '#description': URL query parameter which will stop the view from being logged, eg. "page"
+    size:
+      '#type': number
+      '#title': Size
+      '#description': The size of the searches to log
+      '#required': true
+      '#default_value': 5
+    track:
+      '#type': checkbox
+      '#title': Track
+      '#description': Use this to enable the counters of the search queries
+    log:
+      '#type': checkbox
+      '#title': Log
+      '#description': Use this to enable the logging of the search queries
+
+map:
+  label: Map
+  description: Save mapped value in store storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': Key
+      '#description': The key to store the mapping value
+      '#required': true
+    default_value:
+      '#type': textfield
+      '#title': Default Value
+      '#description': Save this value if source is empty
+    fallback_value:
+      '#type': textfield
+      '#title': Fallback Value
+      '#description': Save this value if there is a source value but it is not mapped.
+    mappings:
+      '#type': textarea
+      '#title': Mappings
+      '#description': Pipe delimited mappings from the source to a key. e.g. Australia|zone:australia, AU|zone:australia

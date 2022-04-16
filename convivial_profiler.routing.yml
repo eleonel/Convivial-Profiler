@@ -1,0 +1,9 @@
+convivial_profiler.settings:
+  path: '/admin/config/convivial/profiler'
+  defaults:
+    _form: '\Drupal\convivial_profiler\Form\SettingsForm'
+    _title: 'Convivial Profiler settings'
+  requirements:
+    _permission: 'administer convivial profiler'
+  options:
+    _admin_route: TRUE
