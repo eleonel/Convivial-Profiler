@@ -20,8 +20,14 @@ convivial_profiler.settings:
       sequence:
         type: mapping
         mapping:
-          id:
+          name:
             type: string
+          label:
+            type: string
+          weight:
+            type: integer
+          status:
+            type: boolean
           description:
             type: string
           deferred:
@@ -68,6 +74,8 @@ convivial_profiler.settings:
                   type: string
                 fallback_value:
                   type: string
+                needle:
+                  type: string
                 mappings:
                   type: sequence
                   sequence:
@@ -91,6 +99,12 @@ convivial_profiler.settings:
                 global_storage:
                   type: boolean
                 remove_empty:
+                  type: boolean
+                substring:
+                  type: string
+                substring_empty:
+                  type: boolean
+                json_stringify:
                   type: boolean
                 paths:
                   type: sequence
@@ -161,6 +175,12 @@ convivial_profiler.settings:
                         type: integer
                       max:
                         type: integer
+                condition_path:
+                  type: string
+                condition_value:
+                  type: boolean
+                condition_remove:
+                  type: boolean
     visibility:
       type: sequence
       label: 'Visibility conditions'

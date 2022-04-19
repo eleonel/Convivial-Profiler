@@ -5,6 +5,21 @@
  * Convivial Profiler module.
  */
 
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function convivial_profiler_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.convivial_profiler':
+      $output = '';
+      $output .= '<h3>' . t('Convivial Profiler') . '</h3>';
+      $output .= '<p>' . t('Provides ability for personalization and visitor data collection') . '</p>';
+      return $output;
+  }
+}
+
 /**
  * Implements hook_page_attachments().
  */

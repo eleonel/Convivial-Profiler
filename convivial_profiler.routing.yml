@@ -1,9 +1,42 @@
 convivial_profiler.settings:
-  path: '/admin/config/convivial/profiler'
+  path: '/admin/config/convivial/profiler/settings'
   defaults:
     _form: '\Drupal\convivial_profiler\Form\SettingsForm'
-    _title: 'Convivial Profiler settings'
+    _title: 'Convivial Profiler'
   requirements:
     _permission: 'administer convivial profiler'
   options:
     _admin_route: TRUE
+
+convivial_profiler.list:
+  path: '/admin/config/convivial/profiler'
+  defaults:
+    _form: '\Drupal\convivial_profiler\Form\ProfilerListForm'
+    _title: 'Profilers'
+  requirements:
+    _permission: 'administer convivial profiler'
+  options:
+    _admin_route: TRUE
+
+convivial_profiler.profiler_add_form:
+  path: '/admin/config/convivial/profiler/add'
+  defaults:
+    _form: '\Drupal\convivial_profiler\Form\ProfilerAddForm'
+    _title: 'Add Profiler'
+  requirements:
+    _permission: 'administer convivial profiler'
+
+convivial_profiler.profiler_edit_form:
+  path: '/admin/config/convivial/profiler/manage/{profiler_id}'
+  defaults:
+    _form: '\Drupal\convivial_profiler\Form\ProfilerEditForm'
+  requirements:
+    _permission: 'administer convivial profiler'
+
+convivial_profiler.profiler_delete:
+  path: '/admin/config/convivial/profiler/manage/{profiler_id}/delete'
+  defaults:
+    _form: '\Drupal\convivial_profiler\Form\ProfilerDeleteForm'
+    _title: 'Delete Profiler'
+  requirements:
+    _permission: 'administer convivial profiler'

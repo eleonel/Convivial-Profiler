@@ -55,8 +55,8 @@ function hook_convivial_profiler_profiler_processor_info_alter(array &$plugins) 
  *
  * Modules may implement this hook to alter the information that defines
  * plugins. All properties that are available in
- * \Drupal\convivial_profiler\Annotation\ProfilerDestination can be altered here,
- * with the addition of the "class" and "provider" keys.
+ * \Drupal\convivial_profiler\Annotation\ProfilerDestination can be altered
+ * here, with the addition of the "class" and "provider" keys.
  *
  * @param array $plugins
  *   The plugin information to be altered, keyed by plugin ID.

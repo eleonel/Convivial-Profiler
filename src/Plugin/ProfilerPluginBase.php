@@ -15,6 +15,7 @@ abstract class ProfilerPluginBase extends PluginBase implements PluginFormInterf
    * Get human-readable plugin name.
    *
    * @return string
+   *   The plugin name.
    */
   public function label() {
     return $this->pluginDefinition['label'];
@@ -24,6 +25,7 @@ abstract class ProfilerPluginBase extends PluginBase implements PluginFormInterf
    * Get plugin configuration.
    *
    * @return array
+   *   The plugin configuration.
    */
   public function getConfiguration() {
     return $this->configuration;

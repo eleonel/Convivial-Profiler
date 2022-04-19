@@ -13,6 +13,9 @@ copy:
     remove_empty:
       '#type': checkbox
       '#title': Remove empty value
+    json_stringify:
+      '#type': checkbox
+      '#title': Convert JavaScript object or value to a JSON string,
     storage:
       '#type': checkboxes
       '#title': Target storage

@@ -1,0 +1,5 @@
+convivial_profiler.profiler_add_form:
+  route_name: convivial_profiler.profiler_add_form
+  title: 'Add profiler'
+  appears_on:
+    - 'convivial_profiler.list'

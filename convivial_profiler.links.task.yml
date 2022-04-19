@@ -1,0 +1,11 @@
+convivial_profiler.settings:
+  title: 'Settings'
+  route_name: convivial_profiler.settings
+  description: 'Convivial Profiler settings.'
+  base_route: convivial_profiler.settings
+
+convivial_profiler.list:
+  title: 'Profilers'
+  route_name: convivial_profiler.list
+  description: 'Profilers list.'
+  base_route: convivial_profiler.settings
