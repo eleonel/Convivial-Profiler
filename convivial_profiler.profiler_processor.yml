@@ -1,51 +1,15 @@
 accumulation:
   label: Accumulation
-  description: Increase accumulators storage.
+  description: Sum values to accumulate them.
   form:
     key:
       '#type': textfield
       '#title': The storage key
       '#required': true
-
-store:
-  label: Store
-  description: Set store storage.
-  form:
-    key:
-      '#type': textfield
-      '#title': The storage key
-      '#required': true
-    ttl:
-      '#type': number
-      '#title': The time to live in seconds
-
-language_simple:
-  label: Language Simple
-  description: Set language simple in store storage.
-  form:
-    key:
-      '#type': textfield
-      '#title': The storage key
-      '#required': true
-    ttl:
-      '#type': number
-      '#title': The time to live in seconds
-
-language_full:
-  label: Language full
-  description: Set language full in store storage.
-  form:
-    key:
-      '#type': textfield
-      '#title': The storage key
-      '#required': true
-    ttl:
-      '#type': number
-      '#title': The time to live in seconds
 
 dimension:
   label: Dimension
-  description: Increase dimensions storage.
+  description: A dimension holds counters for items for a certain aspect.
   form:
     key:
       '#type': textfield
@@ -57,7 +21,7 @@ dimension:
 
 extreme_geoip:
   label: IP geolocation lookup
-  description: Set fetchers storage.
+  description: An asynchronous fetcher which uses a Geo IP service to provide geo information.
   form:
     key:
       '#type': textfield
@@ -68,18 +32,55 @@ extreme_geoip:
       '#title': The time to live in seconds
       '#required': true
 
-device_type:
-  label: Device type
-  description: Set device type.
+language_full:
+  label: Language full
+  description: Converts a language into a 2 character code or longer if the information is available.
   form:
     key:
       '#type': textfield
       '#title': The storage key
       '#required': true
+    ttl:
+      '#type': number
+      '#title': The time to live in seconds
+
+language_simple:
+  label: Language Simple
+  description: Converts a language into a 2 character code.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    ttl:
+      '#type': number
+      '#title': The time to live in seconds
+
+map:
+  label: Map
+  description: Save mapped value in store storage.
+  form:
+    key:
+      '#type': textfield
+      '#title': Key
+      '#description': The key to store the mapping value
+      '#required': true
+    default_value:
+      '#type': textfield
+      '#title': Default Value
+      '#description': Save this value if source is empty
+    fallback_value:
+      '#type': textfield
+      '#title': Fallback Value
+      '#description': Save this value if there is a source value but it is not mapped.
+    mappings:
+      '#type': textarea
+      '#title': Mappings
+      '#description': Pipe delimited mappings from the source to a key. e.g. Australia|zone:australia, AU|zone:australia
 
 pageview:
   label: Page view
-  description: Track page views.
+  description: Track or Log a page view.
   form:
     key:
       '#type': textfield
@@ -133,24 +134,23 @@ searchquery:
       '#title': Log
       '#description': Use this to enable the logging of the search queries
 
-map:
-  label: Map
-  description: Save mapped value in store storage.
+store:
+  label: Store
+  description: Store the value.
   form:
     key:
       '#type': textfield
-      '#title': Key
-      '#description': The key to store the mapping value
+      '#title': The storage key
       '#required': true
-    default_value:
+    ttl:
+      '#type': number
+      '#title': The time to live in seconds
+
+temp:
+  label: Temp store
+  description: Store the value temporarily.
+  form:
+    key:
       '#type': textfield
-      '#title': Default Value
-      '#description': Save this value if source is empty
-    fallback_value:
-      '#type': textfield
-      '#title': Fallback Value
-      '#description': Save this value if there is a source value but it is not mapped.
-    mappings:
-      '#type': textarea
-      '#title': Mappings
-      '#description': Pipe delimited mappings from the source to a key. e.g. Australia|zone:australia, AU|zone:australia
+      '#title': The storage key
+      '#required': true

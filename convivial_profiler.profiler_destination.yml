@@ -1,194 +1,6 @@
-copy:
-  label: Copy
-  description: Set a storage value.
-  form:
-    key:
-      '#type': textfield
-      '#title': The storage key
-      '#required': true
-    paths:
-      '#type': textfield
-      '#title': The value storage path
-      '#required': true
-    remove_empty:
-      '#type': checkbox
-      '#title': Remove empty value
-    json_stringify:
-      '#type': checkbox
-      '#title': Convert JavaScript object or value to a JSON string,
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
-range:
-  label: Range
-  description: Set a defined range value.
-  form:
-    key:
-      '#type': textfield
-      '#title': The storage key
-      '#required': true
-    paths:
-      '#type': textfield
-      '#title': The value storage path
-      '#required': true
-    ranges:
-      '#type': textarea
-      '#title': The range mappings
-      '#description': Insert one range per line in format "key|min|max". <strong>The dot operator is not allowed in the key.<strong>
-      '#required': true
-    remove_empty:
-      '#type': checkbox
-      '#title': Remove empty value
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
-season:
-  label: Season
-  description: Set the current season value.
-  form:
-    key:
-      '#type': textfield
-      '#title': The storage key
-      '#required': true
-    paths:
-      '#type': textfield
-      '#title': The value storage path
-      '#required': true
-    remove_empty:
-      '#type': checkbox
-      '#title': Remove empty value
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
-set:
-  label: Set
-  description: Set a boolean value.
-  form:
-    paths:
-      '#type': textarea
-      '#title': The value storage paths
-      '#description': Insert one path per line.
-      '#required': true
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
-top:
-  label: Top
-  description: Set the top value.
-  form:
-    key:
-      '#type': textfield
-      '#title': The storage key
-      '#required': true
-    paths:
-      '#type': textarea
-      '#title': The value storage paths
-      '#description': Insert one path per line.
-      '#required': true
-    remove_empty:
-      '#type': checkbox
-      '#title': Remove empty value
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
-unset:
-  label: Unset
-  description: Unset a boolean value.
-  form:
-    paths:
-      '#type': textarea
-      '#title': The value storage paths
-      '#description': Insert one path per line.
-      '#required': true
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
-remove:
-  label: Remove
-  description: Remove a value.
-  form:
-    paths:
-      '#type': textarea
-      '#title': The value storage paths
-      '#description': Insert one path per line.
-      '#required': true
-    static_values:
-      '#type': textarea
-      '#title': Static values
-      '#description': The static values to be removed from the storage.
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
-threshold:
-  label: Threshold
-  description: Set the value on based on a value threshold.
-  form:
-    paths:
-      '#type': textfield
-      '#title': The value storage path
-      '#description': specify the storage value path.
-      '#required': true
-    threshold_number:
-      '#type': number
-      '#title': Threshold
-      '#description': The threshold number.
-      '#required': true
-    storage_key:
-      '#type': textfield
-      '#title': Storage key
-      '#description': The storage key.
-      '#required': true
-    storage_value:
-      '#type': textfield
-      '#title': Storage value
-      '#description': The storage value.
-      '#required': true
-    storage:
-      '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
-      '#options':
-        cookie: Cookie
-        localstorage: Local Storage
-
 bestpick:
   label: Best pick
-  description: Set a storage value based on the best pick.
+  description: Utilises a number of localstorage values in order to find the first non empty value.
   form:
     key:
       '#type': textfield
@@ -209,31 +21,60 @@ bestpick:
     global_storage:
       '#type': checkbox
       '#title': Use global Local Storage
-    storage:
+    storage_location:
       '#type': checkboxes
-      '#title': Target storage
-      '#description': Choose the target storage
+      '#title': Storage location
+      '#description': Location where the value will be stored.
       '#options':
         cookie: Cookie
         localstorage: Local Storage
 
-formfiller:
-  label: Form filler
-  description: Fill a form fields based on the defined configuration.
+copy:
+  label: Copy
+  description: Copies a value from internal storage.
   form:
-    paths:
-      '#type': textarea
-      '#title': Storage paths
-      '#default_value': counters.pageview
-      '#description': Specify the list of the storage keys separated by new line e.g. - audience:top
+    key:
+      '#type': textfield
+      '#title': The storage key
       '#required': true
-    storage:
+    paths:
+      '#type': textfield
+      '#title': The value storage path
+      '#required': true
+    remove_empty:
+      '#type': checkbox
+      '#title': Remove empty value
+    json_stringify:
+      '#type': checkbox
+      '#title': Convert JavaScript object or value to a JSON string,
+    storage_location:
       '#type': checkboxes
-      '#title': Data storage
-      '#description': Choose the storage where to pick the form field values
+      '#title': Storage location
+      '#description': Location where the value will be stored.
       '#options':
         cookie: Cookie
         localstorage: Local Storage
+
+datalayer_event:
+  label: Datalayer event
+  description: Sends an event value to the data layer for processing via Google Tag Manager.
+  form:
+    category:
+      '#type': textfield
+      '#title': Datalayer event category
+      '#required': true
+    action:
+      '#type': textfield
+      '#title': Datalayer event action
+      '#required': true
+    normalize:
+      '#type': checkbox
+      '#title': Normalize the values
+
+formfiller:
+  label: Form filler
+  description: Fills form values with values from the profile.
+  form:
     form_selector:
       '#type': textfield
       '#title': Form Selector
@@ -244,24 +85,18 @@ formfiller:
       '#title': Form fields selector
       '#description': Specify the list of the form field names with their value selectors separated by new line e.g. - <code>crm_signup_topic|topic_crm</code>
       '#required': true
-
-officehours:
-  label: Office hours
-  description: Set the office hours based on the defined opening hours.
-  form:
-    paths:
-      '#type': textarea
-      '#title': Storage paths
-      '#default_value': counters.pageview
-      '#description': Specify the list of the storage keys separated by new line e.g. - audience:top
-      '#required': true
-    storage:
+    storage_location:
       '#type': checkboxes
-      '#title': Data storage
-      '#description': Choose the storage where to pick the form field values
+      '#title': Storage location
+      '#description': Location where to pick the form field values.
       '#options':
         cookie: Cookie
         localstorage: Local Storage
+
+officehours:
+  label: Office hours
+  description: Calculates whether the office is open based on the time of day and the timezone of the office.
+  form:
     normal_start:
       '#type': date
       '#title': Normal days start
@@ -302,23 +137,172 @@ officehours:
       '#title': Office close time
       '#required': true
       '#default_value': '17'
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
 
-datalayer_event:
-  label: Datalayer event
-  description: Set a datalayer event.
+range:
+  label: Range
+  description: Maps a single value into a list of ranges.
   form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
     paths:
       '#type': textfield
       '#title': The value storage path
       '#required': true
-    category:
-      '#type': textfield
-      '#title': Datalayer event category
+    ranges:
+      '#type': textarea
+      '#title': The range mappings
+      '#description': Insert one range per line in format "key|min|max". <strong>The dot operator is not allowed in the key.<strong>
       '#required': true
-    action:
-      '#type': textfield
-      '#title': Datalayer event action
-      '#required': true
-    normalize:
+    remove_empty:
       '#type': checkbox
-      '#title': Normalize the values
+      '#title': Remove empty value
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
+
+remove:
+  label: Remove
+  description: Removes a “key” value so that it is empty.
+  form:
+    paths:
+      '#type': textarea
+      '#title': The value storage paths
+      '#description': Insert one path per line.
+      '#required': true
+    static_values:
+      '#type': textarea
+      '#title': Static values
+      '#description': The static values to be removed from the storage.
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be removed.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
+
+season:
+  label: Season
+  description: Converts a latitude value into a season.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    paths:
+      '#type': textfield
+      '#title': The value storage path
+      '#required': true
+    remove_empty:
+      '#type': checkbox
+      '#title': Remove empty value
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
+
+set:
+  label: Set
+  description: Sets a “key” value to true.
+  form:
+    paths:
+      '#type': textarea
+      '#title': The value storage paths
+      '#description': Insert one path per line.
+      '#required': true
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
+
+threshold:
+  label: Threshold
+  description: Calculate whether a value in dimension has exceeded a threshold number and then sets a value.
+  form:
+    paths:
+      '#type': textfield
+      '#title': The value storage path
+      '#description': specify the storage value path.
+      '#required': true
+    threshold_number:
+      '#type': number
+      '#title': Threshold
+      '#description': The threshold number.
+      '#required': true
+    storage_key:
+      '#type': textfield
+      '#title': Storage key
+      '#description': The storage key.
+      '#required': true
+    storage_value:
+      '#type': textfield
+      '#title': Storage value
+      '#description': The storage value.
+      '#required': true
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
+
+top:
+  label: Top
+  description: Calculates the top result in a dimension.
+  form:
+    key:
+      '#type': textfield
+      '#title': The storage key
+      '#required': true
+    paths:
+      '#type': textarea
+      '#title': The value storage paths
+      '#description': Insert one path per line.
+      '#required': true
+    remove_empty:
+      '#type': checkbox
+      '#title': Remove empty value
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
+
+unset:
+  label: Unset
+  description: Sets a “key” value to false.
+  form:
+    paths:
+      '#type': textarea
+      '#title': The value storage paths
+      '#description': Insert one path per line.
+      '#required': true
+    storage_location:
+      '#type': checkboxes
+      '#title': Storage location
+      '#description': Location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage

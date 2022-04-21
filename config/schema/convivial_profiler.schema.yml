@@ -90,8 +90,6 @@ convivial_profiler.settings:
               mapping:
                 default_value:
                   type: string
-                description:
-                  type: string
                 key:
                   type: string
                 type:
@@ -112,7 +110,7 @@ convivial_profiler.settings:
                   sequence:
                     type: string
                     label: 'Path'
-                storage:
+                storage_location:
                   type: mapping
                   label: 'Storage'
                   mapping:

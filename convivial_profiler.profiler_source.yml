@@ -1,6 +1,18 @@
+acceptlang:
+  label: HTTP Accept-Language header
+  description: Provides the language which has been set in the browser. e.g. <em>en-AU</em>
+  form:
+    key:
+      '#type': textfield
+      '#title': The user accept language source
+      '#required': true
+      '#value': 'navigator.language'
+      '#attributes':
+        disabled: disabled
+
 cookie:
   label: HTTP cookie
-  description: A cookie value.
+  description: Provides the value of a cookie by name.
   form:
     key:
       '#type': textfield
@@ -9,47 +21,16 @@ cookie:
 
 get:
   label: HTTP GET request
-  description: A URL response.
+  description: Provides the URL of the page.
   form:
     url:
       '#type': textfield
       '#title': The resource URL
       '#required': true
 
-meta:
-  label: HTML meta tag
-  description: A meta tag value.
-  form:
-    key:
-      '#type': textfield
-      '#title': The element name attribute
-      '#required': true
-
-query:
-  label: URL query parameter
-  description: A query parameter value.
-  form:
-    key:
-      '#type': textfield
-      '#title': The parameter name
-      '#required': true
-
-time:
-  label: Current time
-  description: A current time timestamp.
-  form:
-    key:
-      '#type': select
-      '#title': The time part to return
-      '#options':
-        hour: Hours
-        minute: Minutes
-        second: Seconds
-      '#required': true
-
-useragent:
+httpuseragent:
   label: HTTP User agent
-  description: A user agent value.
+  description: Provides the user agent string.
   form:
     key:
       '#type': textfield
@@ -59,14 +40,33 @@ useragent:
       '#attributes':
         disabled: disabled
 
-acceptlang:
-  label: HTTP Accept-Language header
-  description: A user accept language header value. e.g. <em>en-AU</em>
+meta:
+  label: HTML meta tag
+  description: Provides a list of values in a metatag.
   form:
     key:
       '#type': textfield
-      '#title': The user accept language source
+      '#title': The element name attribute
       '#required': true
-      '#value': 'navigator.language'
-      '#attributes':
-        disabled: disabled
+
+query:
+  label: URL query parameter
+  description: Provides the value of a query parameter.
+  form:
+    key:
+      '#type': textfield
+      '#title': The parameter name
+      '#required': true
+
+time:
+  label: Current time
+  description: Provides the time of the user’s browser.
+  form:
+    key:
+      '#type': select
+      '#title': The time part to return
+      '#options':
+        hour: Hours
+        minute: Minutes
+        second: Seconds
+      '#required': true

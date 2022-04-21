@@ -29,12 +29,6 @@ class ProfilerDestinationDefault extends ProfilerPluginBase implements ProfilerD
       $this->configuration['ranges'] = implode(PHP_EOL, $this->configuration['ranges']);
     }
 
-    $form['description'] = [
-      '#type' => 'textfield',
-      '#title' => $this->t('Admin description'),
-      '#default_value' => $this->configuration['description'] ?? '',
-    ];
-
     return parent::buildConfigurationForm($form, $form_state);
   }
 
@@ -66,8 +60,6 @@ class ProfilerDestinationDefault extends ProfilerPluginBase implements ProfilerD
       }
       $form_state->setValue('ranges', $ranges);
     }
-
-    $this->configuration['description'] = $form_state->getValue('description') ?? '';
 
     parent::submitConfigurationForm($form, $form_state);
   }
