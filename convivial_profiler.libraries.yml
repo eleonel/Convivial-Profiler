@@ -1,6 +1,6 @@
 library:
   js:
-    //cdn.jsdelivr.net/gh/morpht/convivial-profiler@v0.1.26/dist/bundle.js: { type: external, minified: true }
+    //cdn.jsdelivr.net/gh/morpht/convivial-profiler@v0.1.27/dist/bundle.js: { type: external, minified: true }
 
 init:
   js:

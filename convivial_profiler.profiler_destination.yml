@@ -93,6 +93,32 @@ formfiller:
         cookie: Cookie
         localstorage: Local Storage
 
+formtracker:
+  label: Form tracker
+  description: Track the responses via dataLayer on submitting the form to have time series analysis of things such as sentiment.
+  form:
+    form_selector:
+      '#type': textfield
+      '#title': Form Selector
+      '#description': The form selector for the form tracker e.g. form class - <code>.newsletter-signup-form</code>
+      '#required': true
+    field_name:
+      '#type': textfield
+      '#title': Form field name
+      '#description': Specify the form field name to capture the value e.g. - <code>email</code>
+      '#required': true
+    event_action:
+      '#type': textfield
+      '#title': Datalayer event action
+      '#required': true
+      '#value': 'formsubmit'
+      '#attributes':
+        disabled: disabled
+    event_category:
+      '#type': textfield
+      '#title': Datalayer event category
+      '#required': true
+
 officehours:
   label: Office hours
   description: Calculates whether the office is open based on the time of day and the timezone of the office.

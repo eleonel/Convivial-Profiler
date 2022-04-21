@@ -138,6 +138,12 @@ convivial_profiler.settings:
                   type: string
                 form_selector:
                   type: string
+                field_name:
+                  type: string
+                event_action:
+                  type: string
+                event_category:
+                  type: string
                 fields_selector:
                   type: sequence
                   label: 'Fields Selector'
