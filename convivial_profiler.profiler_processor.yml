@@ -2,77 +2,86 @@ accumulation:
   label: Accumulation
   description: Sum values to accumulate them.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': The storage key
+      '#title': Storage key
+      '#description': The accumulator to add the value to.
       '#required': true
 
 dimension:
   label: Dimension
   description: A dimension holds counters for items for a certain aspect.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': The storage key
+      '#title': Storage key
+      '#description': The dimension to use for incrementing the counter for the value.
       '#required': true
     normalize:
       '#type': checkbox
-      '#title': Normalize the values
+      '#title': Normalize
+      '#description': Adjust the usual counter amount (1) down to accommodate the number of other values in this dimension.
 
 extreme_geoip:
   label: IP geolocation lookup
   description: An asynchronous fetcher which uses a Geo IP service to provide geo information.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': The storage key
+      '#title': Storage key
+      '#description': The key to store the retrieved geo data.
       '#required': true
     ttl:
       '#type': number
-      '#title': The time to live in seconds
+      '#title': Time to live (TTL)
+      '#description': The time to wait before the data expires.
       '#required': true
 
 language_full:
   label: Language full
   description: Converts a language into a 2 character code or longer if the information is available.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': The storage key
+      '#title': Storage key
+      '#description': The key to store the full language.
       '#required': true
     ttl:
       '#type': number
-      '#title': The time to live in seconds
+      '#title': Time to live (TTL)
+      '#description': The time to wait before the data expires.
 
 language_simple:
   label: Language Simple
   description: Converts a language into a 2 character code.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': The storage key
+      '#title': Storage key
+      '#description': The key to store the simple language.
       '#required': true
     ttl:
       '#type': number
-      '#title': The time to live in seconds
+      '#title': Time to live (TTL)
+      '#description': The time to wait before the data expires.
 
 map:
   label: Map
   description: Save mapped value in store storage.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': Key
-      '#description': The key to store the mapping value
+      '#title': Storage key
+      '#description': The key to store the mapping value.
       '#required': true
     default_value:
       '#type': textfield
       '#title': Default Value
-      '#description': Save this value if source is empty
+      '#description': Use this value if the source is empty.
     fallback_value:
       '#type': textfield
       '#title': Fallback Value
-      '#description': Save this value if there is a source value but it is not mapped.
+      '#description': Use this value if there is a source value but it is not mapped.
     mappings:
       '#type': textarea
       '#title': Mappings
@@ -82,75 +91,78 @@ pageview:
   label: Page view
   description: Track or Log a page view.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': Key
-      '#description': The key to store this pageview log and track under
+      '#title': Storage key
+      '#description': The key to store this pageview log and track under.
       '#required': true
     track:
       '#type': checkbox
       '#title': Track
-      '#description': Use this to enable the counters of the page view
+      '#description': Use this to enable the counters of the page view.
     log:
       '#type': checkbox
       '#title': Log
-      '#description': Use this to enable the logging of the page view
+      '#description': "Use this to enable the logging of the page view. Warning: This will result in potentially a large number of records being added to the log."
 
 searchquery:
   label: Search Query
   description: Track and log search query.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': Key
-      '#description': The key to store this search query log and track under
+      '#title': Storage key
+      '#description': The key to store this search query log and track under.
       '#required': true
     search_path:
       '#type': textfield
       '#title': Path
-      '#description': The Url of the search page
+      '#description': The URL of the search page, eg. /search
       '#required': true
     query_param:
       '#type': textfield
       '#title': Query param
-      '#description': The URL query parameter for the search term, eg "query"
+      '#description': The URL query parameter for the search term, eg. "query".
       '#required': true
     exclude_param:
       '#type': textfield
       '#title': Exclude param
-      '#description': URL query parameter which will stop the view from being logged, eg. "page"
+      '#description': URL query parameters which will stop the view from being logged, eg. "page".
     size:
       '#type': number
       '#title': Size
-      '#description': The size of the searches to log
+      '#description': The maximum number of searches to log.
       '#required': true
       '#default_value': 5
     track:
       '#type': checkbox
       '#title': Track
-      '#description': Use this to enable the counters of the search queries
+      '#description': Use this to enable the counters of the search queries.
     log:
       '#type': checkbox
       '#title': Log
-      '#description': Use this to enable the logging of the search queries
+      '#description': Use this to enable the logging of the search queries.
 
 store:
   label: Store
   description: Store the value.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': The storage key
+      '#title': Storage key
+      '#description': The key to use in the store.
       '#required': true
     ttl:
       '#type': number
-      '#title': The time to live in seconds
+      '#title': Time to live (TTL)
+      '#description': The time to live in seconds for the value. Set to -1 to make the value live forever.
 
 temp:
   label: Temp store
   description: Store the value temporarily.
   form:
-    key:
+    storage_key:
       '#type': textfield
-      '#title': The storage key
+      '#title': Storage key
+      '#description': The key to use in the temp store. This value will be removed on the next page load.
       '#required': true

@@ -43,6 +43,16 @@ convivial_profiler.settings:
                   type: string
                 key:
                   type: string
+                name:
+                  type: string
+                resource_url:
+                  type: string
+                attribute_name:
+                  type: string
+                param:
+                  type: string
+                part:
+                  type: string
           processors:
             type: sequence
             label: 'Processors'
@@ -52,7 +62,7 @@ convivial_profiler.settings:
               mapping:
                 type:
                   type: string
-                key:
+                storage_key:
                   type: string
                 ttl:
                   type: integer
@@ -74,8 +84,6 @@ convivial_profiler.settings:
                   type: string
                 fallback_value:
                   type: string
-                needle:
-                  type: string
                 mappings:
                   type: sequence
                   sequence:
@@ -88,36 +96,28 @@ convivial_profiler.settings:
               type: mapping
               label: 'Destination'
               mapping:
-                default_value:
-                  type: string
-                key:
-                  type: string
                 type:
                   type: string
-                global_storage:
-                  type: boolean
+                target_key:
+                  type: string
+                target_value:
+                  type: string
                 remove_empty:
                   type: boolean
-                substring:
+                dimension_key:
                   type: string
-                substring_empty:
-                  type: boolean
-                json_stringify:
-                  type: boolean
-                paths:
+                storage_key:
+                  type: string
+                storage_keys:
                   type: sequence
-                  label: 'Paths'
+                  label: 'Storage keys'
                   sequence:
                     type: string
-                    label: 'Path'
-                storage_location:
-                  type: mapping
-                  label: 'Storage'
-                  mapping:
-                    localstorage:
-                      type: string
-                    cookie:
-                      type: string
+                    label: 'Storage key'
+                default_value:
+                  type: string
+                stringify:
+                  type: boolean
                 static_values:
                   type: sequence
                   label: 'Static Values'
@@ -132,17 +132,9 @@ convivial_profiler.settings:
                   type: string
                 normalize:
                   type: boolean
-                storage_key:
-                  type: string
                 storage_value:
                   type: string
                 form_selector:
-                  type: string
-                field_name:
-                  type: string
-                event_action:
-                  type: string
-                event_category:
                   type: string
                 fields_selector:
                   type: sequence
@@ -150,6 +142,12 @@ convivial_profiler.settings:
                   sequence:
                     type: string
                     label: 'Field selector'
+                field_name:
+                  type: string
+                event_action:
+                  type: string
+                event_category:
+                  type: string
                 normal_start:
                   type: string
                 normal_end:
@@ -179,12 +177,22 @@ convivial_profiler.settings:
                         type: integer
                       max:
                         type: integer
-                condition_path:
-                  type: string
-                condition_value:
-                  type: boolean
-                condition_remove:
-                  type: boolean
+                target_location:
+                  type: mapping
+                  label: 'Target location'
+                  mapping:
+                    localstorage:
+                      type: string
+                    cookie:
+                      type: string
+                storage_source:
+                  type: mapping
+                  label: 'Storage source'
+                  mapping:
+                    localstorage:
+                      type: string
+                    cookie:
+                      type: string
     visibility:
       type: sequence
       label: 'Visibility conditions'

@@ -13,8 +13,8 @@ class ProfilerDestinationDefault extends ProfilerPluginBase implements ProfilerD
    * {@inheritdoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    if (isset($this->configuration['paths'])) {
-      $this->configuration['paths'] = implode(PHP_EOL, $this->configuration['paths']);
+    if (isset($this->configuration['storage_keys'])) {
+      $this->configuration['storage_keys'] = implode(PHP_EOL, $this->configuration['storage_keys']);
     }
     if (isset($this->configuration['static_values'])) {
       $this->configuration['static_values'] = implode(PHP_EOL, $this->configuration['static_values']);
@@ -36,9 +36,9 @@ class ProfilerDestinationDefault extends ProfilerPluginBase implements ProfilerD
    * {@inheritdoc}
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
-    if ($form_state->hasValue('paths')) {
-      $paths = array_map('trim', explode(PHP_EOL, $form_state->getValue('paths')));
-      $form_state->setValue('paths', $paths);
+    if ($form_state->hasValue('storage_keys')) {
+      $paths = array_map('trim', explode(PHP_EOL, $form_state->getValue('storage_keys')));
+      $form_state->setValue('storage_keys', $paths);
     }
     if ($form_state->hasValue('static_values')) {
       $static_values = array_map('trim', explode(PHP_EOL, $form_state->getValue('static_values')));
