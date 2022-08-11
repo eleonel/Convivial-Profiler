@@ -28,7 +28,12 @@ class ProfilerDestinationDefault extends ProfilerPluginBase implements ProfilerD
       }
       $this->configuration['ranges'] = implode(PHP_EOL, $this->configuration['ranges']);
     }
-
+    if (isset($this->configuration['office_times'])) {
+      foreach ($this->configuration['office_times'] as &$office_time) {
+        $office_time = implode(',', $office_time);
+      }
+      $this->configuration['office_times'] = implode(PHP_EOL, $this->configuration['office_times']);
+    }
     return parent::buildConfigurationForm($form, $form_state);
   }
 
@@ -60,7 +65,18 @@ class ProfilerDestinationDefault extends ProfilerPluginBase implements ProfilerD
       }
       $form_state->setValue('ranges', $ranges);
     }
-
+    if ($form_state->hasValue('office_times')) {
+      $office_times = explode(PHP_EOL, $form_state->getValue('office_times'));
+      foreach ($office_times as &$office_time) {
+        [$day, $start, $close] = explode(',', $office_time);
+        $office_time = [
+          'day' => intval($day),
+          'start' => intval($start),
+          'close' => intval($close),
+        ];
+      }
+      $form_state->setValue('office_times', $office_times);
+    }
     parent::submitConfigurationForm($form, $form_state);
   }
 

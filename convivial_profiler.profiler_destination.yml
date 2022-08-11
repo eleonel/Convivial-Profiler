@@ -172,18 +172,11 @@ officehours:
       '#description': The GMT time offset for daylight savings time.
       '#required': true
       '#default_value': '+11'
-    office_start:
-      '#type': textfield
-      '#title': Office start time
-      '#description': The office opening time.
+    office_times:
+      '#type': textarea
+      '#title': Office Time
+      '#description': The office time from Sunday to Saturday. The value of the integer corresponding to the day of the week - 0 for Sunday, 1 for Monday, 2 for Tuesday, and so on.
       '#required': true
-      '#default_value': '09'
-    office_close:
-      '#type': textfield
-      '#title': Office close time
-      '#description': The office closing time.
-      '#required': true
-      '#default_value': '17'
     target_location:
       '#type': checkboxes
       '#title': Target location

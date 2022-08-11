@@ -160,10 +160,19 @@ convivial_profiler.settings:
                   type: string
                 daylight_saving_offset:
                   type: string
-                office_start:
-                  type: string
-                office_close:
-                  type: string
+                office_times:
+                  type: sequence
+                  label: 'Office times'
+                  sequence:
+                    type: mapping
+                    label: 'Office time'
+                    mapping:
+                      day:
+                        type: integer
+                      start:
+                        type: integer
+                      close:
+                        type: integer
                 ranges:
                   type: sequence
                   label: 'Ranges'
