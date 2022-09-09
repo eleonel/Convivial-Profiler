@@ -11,9 +11,7 @@
   'use strict';
   Drupal.behaviors.convivialProfiler = {
     attach: function (context, settings) {
-       // @Todo Due of conflict in tracking of smart_content ajax blocks.
-      // See the formfiller and formtracker destination plugins.
-      // once('convivialProfiler', 'html', context).forEach( function (element) {
+      once('convivialProfiler', 'html', context).forEach( function (element) {
         window.convivialProfiler = new ConvivialProfiler(config.config, config.site, config.license_key);
         window.convivialProfiler.collect();
         $(document).once('cp_trackable').on('click', '.cp_trackable a.btn', function (event) {
@@ -31,7 +29,7 @@
             });
           }
         });
-      // });
+      });
     }
   };
 })(jQuery, window, once, Drupal, drupalSettings.convivialProfiler, window.ConvivialProfiler.default);
