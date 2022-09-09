@@ -1,0 +1,11 @@
+convivial_profiler_sync.export:
+  title: 'Export Profilers'
+  route_name: convivial_profiler_sync.export
+  description: 'Export Profilers.'
+  base_route: convivial_profiler.settings
+
+convivial_profiler_sync.import:
+  title: 'Import Profilers'
+  route_name: convivial_profiler_sync.import
+  description: 'Import Profilers.'
+  base_route: convivial_profiler.settings

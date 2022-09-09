@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Convivial Profiler sync module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function convivial_profiler_sync_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.convivial_profiler_sync':
+      $output = '';
+      $output .= '<h3>' . t('Convivial Profiler Sync') . '</h3>';
+      $output .= '<p>' . t('Provides ability to export and import the profilers in Convivial Profiler.') . '</p>';
+      return $output;
+  }
+}

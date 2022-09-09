@@ -1,0 +1,15 @@
+convivial_profiler_sync.export:
+  path: '/admin/config/convivial/profiler/export'
+  defaults:
+    _form: '\Drupal\convivial_profiler_sync\Form\ProfilerExportForm'
+    _title: 'Export Profilers'
+  requirements:
+    _permission: 'administer convivial profiler sync'
+
+convivial_profiler_sync.import:
+  path: '/admin/config/convivial/profiler/import'
+  defaults:
+    _form: '\Drupal\convivial_profiler_sync\Form\ProfilerImportForm'
+    _title: 'Import Profilers'
+  requirements:
+    _permission: 'administer convivial profiler sync'

@@ -1,0 +1,8 @@
+name: Convivial Profiler Sync
+type: module
+description: Provides ability to export and import the profilers in Convivial Profiler.
+core_version_requirement: ^9
+package: Convivial
+configure: convivial_profiler_sync.settings
+dependencies:
+  - drupal:convivial_profiler
