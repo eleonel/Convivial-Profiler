@@ -5,4 +5,4 @@ core_version_requirement: ^9 || ^10
 package: Convivial
 configure: convivial_profiler.settings
 dependencies:
-  - drupal:convivial_core
+  - convivial_core:convivial_core
