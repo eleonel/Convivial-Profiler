@@ -76,6 +76,30 @@ datalayer_event:
       '#type': checkbox
       '#title': Normalize
       '#description': Normalize the value down from 1 to accommodate the number of values.
+flag:
+  label: Flag
+  description: Sets a “flag” value to the target location.
+  form:
+    storage_key:
+      '#type': textfield
+      '#title': Storage key
+      '#description': The storage key to get the value from. A value with on or off will be set with this key.
+      '#required': true
+    flag_prefix:
+      '#type': textfield
+      '#title': Flag prefix
+      '#description': Use this provide the prefix value with the flag storage value.
+    flag_suffix:
+      '#type': textfield
+      '#title': Flag suffix
+      '#description': Use this provide the suffix value with the flag storage value.
+    target_location:
+      '#type': checkboxes
+      '#title': Target location
+      '#description': The target location where the value will be stored.
+      '#options':
+        cookie: Cookie
+        localstorage: Local Storage
 
 formfiller:
   label: Form filler

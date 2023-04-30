@@ -202,6 +202,10 @@ convivial_profiler.settings:
                       type: string
                     cookie:
                       type: string
+                flag_prefix:
+                  type: string
+                flag_suffix:
+                  type: string
     visibility:
       type: sequence
       label: 'Visibility conditions'
