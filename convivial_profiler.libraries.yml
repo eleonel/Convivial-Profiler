@@ -8,5 +8,6 @@ init:
   dependencies:
     - core/jquery
     - core/once
+    - core/drupal
     - core/drupalSettings
     - convivial_profiler/library
