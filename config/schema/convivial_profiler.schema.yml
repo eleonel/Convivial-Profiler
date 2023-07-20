@@ -64,6 +64,8 @@ convivial_profiler.settings:
                   type: string
                 storage_key:
                   type: string
+                storage_value:
+                  type: string
                 ttl:
                   type: integer
                 normalize:

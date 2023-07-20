@@ -157,6 +157,26 @@ store:
       '#title': Time to live (TTL)
       '#description': The time to live in seconds for the value. Set to -1 to make the value live forever.
 
+unstore_value:
+  label: Unstore Value
+  description: Unstore the value from internal storage after compairing with the defined value.
+  form:
+    storage_key:
+      '#type': textfield
+      '#title': Storage key
+      '#description': The key to use in the temp store. This value will be removed on the next page load.
+      '#required': true
+    storage_value:
+      '#type': textfield
+      '#title': Storage value
+      '#description': The value of the storage to be used by the destination plugins.
+      '#required': true
+    unstore_key:
+      '#type': textfield
+      '#title': Unstore key
+      '#description': The store key to compare with the source value.
+      '#required': true
+
 temp:
   label: Temp store
   description: Store the value temporarily.
